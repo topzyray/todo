@@ -1,11 +1,14 @@
+import dotenv from "dotenv"
+dotenv.config({path: "./config.env"})
+
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
-var conString = "postgres://xayniuim:dAdT8sjF-grYPkP7cPbGZy-ZT1aiOr3O@mel.db.elephantsql.com/xayniuim" //Can be found in the Details page
+var conString = process.env.DATABASE_URL //Can be found in the Details page
 var db = new pg.Client(conString);
 db.connect(function(err) {
   if(err) {

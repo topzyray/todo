@@ -3,3 +3,5 @@ node_modules/
 solution.js
 
 queries.sql
+
+config.env
